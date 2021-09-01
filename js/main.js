@@ -31,11 +31,18 @@ function checkTheNumber() {
 
 }
 
+let counter=0;
+const attemptsCounter = () => {
+    counter++;
+    numberOfAttempts.innerHTML= `Número de intentos: ${counter}`
+}
+
+
 // "container" function
 const handlerButton = (event) => {
     event.preventDefault();
     checkTheNumber();
-    //attemptsCounter();
+    attemptsCounter();
 }
 
 
