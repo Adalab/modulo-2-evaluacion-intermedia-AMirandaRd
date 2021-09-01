@@ -32,11 +32,13 @@ const attemptsCounter = () => {
     numberOfAttempts.innerHTML = `Número de intentos: ${counter}`;
 };
 
+
 // "container" function
 const handlerButton = (event) => {
     event.preventDefault();
     checkTheNumber();
     attemptsCounter();
+    numbersYouHaveTried();
 };
 
 button.addEventListener("click", handlerButton);
