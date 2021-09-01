@@ -38,7 +38,7 @@ const handlerButton = (event) => {
     event.preventDefault();
     checkTheNumber();
     attemptsCounter();
-    numbersYouHaveTried();
+    
 };
 
 button.addEventListener("click", handlerButton);
