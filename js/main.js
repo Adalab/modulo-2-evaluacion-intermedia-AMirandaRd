@@ -1,29 +1,31 @@
 "use strict";
 
 const inputNumber = document.querySelector(".js-input");
-const cluetext = document.querySelector(".js-clue");
+const clueText = document.querySelector(".js-clue");
 const numberOfAttempts = document.querySelector(".js-counter");
 const button = document.querySelector(".js-button");
 
-function getRandomNumber(100) {
-    return Math.ceil(Math.random() * 100);
+function getRandomNumber(max) {
+    return Math.ceil(Math.random() * max);
 }
-const randomNumber = getRandomNumber();
+const randomNumber = getRandomNumber(100);
 console.log(randomNumber);
-
+let answer=''
 function checkTheNumber() {
     const selectedNumber = parseInt(inputNumber.value);
     console.log(selectedNumber);
 
     if (selectedNumber < 1 || selectedNumber > 100) {
-        cluetext.innerHTML = "El número debe estar entre 1 y 100";
-    } else if (selectedNumber === randomNumber) {
-        cluetext.innerHTML = "Has ganado campeona!!!";
+        answer = "El número debe estar entre 1 y 100";
+    } 
+    else if (selectedNumber === randomNumber) {
+        answer = "Has ganado campeona!!!";
     } else if (selectedNumber < randomNumber) {
-        cluetext.innerHTML = "Demasiado bajo";
+        answer = "Demasiado bajo";
     } else if (selectedNumber > randomNumber) {
-        cluetext.innerHTML = "Demasiado alto";
+        answer = "Demasiado alto";
     }
+    clueText.innerHTML=answer;
 }
 
 let counter = 0;
