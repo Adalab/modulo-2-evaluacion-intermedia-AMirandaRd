@@ -5,7 +5,7 @@ const cluetext = document.querySelector(".js-clue");
 const numberOfAttempts = document.querySelector(".js-counter");
 const button = document.querySelector(".js-button");
 
-function getRandomNumber(max) {
+function getRandomNumber(100) {
     return Math.ceil(Math.random() * 100);
 }
 const randomNumber = getRandomNumber();
