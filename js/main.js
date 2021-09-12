@@ -10,22 +10,26 @@ function getRandomNumber(max) {
 }
 const randomNumber = getRandomNumber(100);
 console.log(randomNumber);
-let answer=''
+let answer = ''
 function checkTheNumber() {
     const selectedNumber = parseInt(inputNumber.value);
     console.log(selectedNumber);
 
     if (selectedNumber < 1 || selectedNumber > 100) {
         answer = "El número debe estar entre 1 y 100";
-    } 
+    } else if (inputNumber.value.length === 0) {
+        answer = "Por favor introduce un número"
+    }
     else if (selectedNumber === randomNumber) {
         answer = "Has ganado campeona!!!";
     } else if (selectedNumber < randomNumber) {
         answer = "Demasiado bajo";
     } else if (selectedNumber > randomNumber) {
         answer = "Demasiado alto";
+    } else {
+        answer = "Por favor introduce un número entre 1 y 100"
     }
-    clueText.innerHTML=answer;
+    clueText.innerHTML = answer;
 }
 
 let counter = 0;
@@ -40,7 +44,7 @@ const handlerButton = (event) => {
     event.preventDefault();
     checkTheNumber();
     attemptsCounter();
-    
+
 };
 
 button.addEventListener("click", handlerButton);
